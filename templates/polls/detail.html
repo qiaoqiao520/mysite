@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8">
+        <title>问题详情页</title>
+    </head>
+    <body>
+        <h1>{{ question.question_text }}</h1>
+        <ul>
+            {% for choice in question.choice_set.all %}
+                <li>{{ choice.choice_text }}</li>
+            {% endfor %}
+        </ul>
+
+
+{#        建议所有业务逻辑放在后端，前端尽可能简单，变量直接渲染使用#}
+{#        {% for c in choices %}#}
+{#            <p>{{ c.choice_text }}</p>#}
+{#        {% endfor %}#}
+
+    </body>
+</html>
