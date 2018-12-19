@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views   # 从当前文件夹引入文件
 
-# app_name = 'polls'
+app_name = 'polls'
 urlpatterns = [
     # 首页 http://ip:port/polls/
     path('', views.index, name='index'),
@@ -13,6 +13,9 @@ urlpatterns = [
     path('<int:question_id>/results/', views.results, name='results'),
     # 去投票, 选项计数加一  /polls/5/vote/
     path('<int:question_id>/vote/', views.vote, name='vote'),
+
+    # 通用视图示例
+    path('simple/', views.SimpleView.as_view(), name='simple'),
 
 ]
 
