@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8">
+        <title>首页</title>
+    </head>
+    <body>
+        {% if not questin_list %}
+            <p>问题列表为空</p>
+        {% endif %}
+        <ul>
+            {% for q in question_list %}
+                <a href="{% url 'detail' q.id %}">
+                    <li>问题：{{ q.question_text }}  发布时间：{{ q.pub_date }}</li>
+                </a>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
